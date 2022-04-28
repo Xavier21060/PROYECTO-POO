@@ -1,5 +1,8 @@
 package model;
 
+import java.util.ArrayList;
+import java.util.Date;
+
 public class Patien extends Users {
 
     //Atributos de la clase empleado
@@ -7,6 +10,27 @@ public class Patien extends Users {
     private String blood;
     private double weight; //solo va a ser accesible o modificable desde esta clases
     private double height; //solo va a ser accesible o modificable desde esta clases
+    private ArrayList<AppointmentsDoctor> appointmentsDoctors = new ArrayList<>();
+    private ArrayList<AppointmentNurse> appointmentNurses = new ArrayList<>();
+
+    public ArrayList<AppointmentsDoctor> getAppointmentsDoctors() {
+        return appointmentsDoctors;
+    }
+
+    public void addAppointmentsDoctors(Doctor doctor, Date date, String time){
+       AppointmentsDoctor appointmentsDoctor = new AppointmentsDoctor(this,doctor);
+       appointmentsDoctor.schedule(date,time);
+       appointmentsDoctors.add(appointmentsDoctor);
+       this.appointmentsDoctors = appointmentsDoctors;
+    }
+
+    public ArrayList<AppointmentNurse> getAppointmentNurses() {
+        return appointmentNurses;
+    }
+
+    public void setAppointmentNurses(ArrayList<AppointmentNurse> appointmentNurses) {
+        this.appointmentNurses = appointmentNurses;
+    }
 
     //metodo constructor
     public Patien (String name, String email) {

@@ -14,11 +14,11 @@ public class UIMenu {
 
     public static void showMenu() {
         System.out.println("Welcome to My Appointments");
-        System.out.println("Selecciona la opción deseada");
+        System.out.println("Selecciona la opcion deseada");
 
         int response = 0;
         do {
-            System.out.println("1. model.Doctor");
+            System.out.println("1. Doctor");
             System.out.println("2. Patient");
             System.out.println("0. Salir");
 
@@ -81,6 +81,7 @@ public class UIMenu {
                         emailCorrect = true;
                         //Obtener el dtao del usuario logeado
                         patienLogged = patien;
+                        UIPatienMenu.showPatientMenu();
                     }
                 }
             }
@@ -104,7 +105,7 @@ public class UIMenu {
 
                     System.out.println("::Book an appointment");
                     for (int i = 1; i < 4; i++) { //For: los primeros tre smeses de del año
-                        System.out.println((i + 1) + ". " + MONTHS[i]);
+                        System.out.println(i + ". " + MONTHS[i]);
 
                     }
                     break;

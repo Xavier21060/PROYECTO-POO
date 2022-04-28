@@ -9,11 +9,9 @@ public class Doctor extends Users {
 
       //creamos el primer atribbuto
       private String speciality; //es el unico atributo que diferecia al docto de los demas model.Users
-
+      private ArrayList<AvailableAppointment> availableAppointments = new ArrayList<>();
       public Doctor(String name, String email){  // vamos a asignarlos los datos name y specilaity a las vaiabls que estan de manera global
           super(name, email); //heredan los atributos de la clase User
-          System.out.println("el nombre del doctor asignado es " + name);
-          this.speciality = speciality;
       }
 
       public String speciality() {
@@ -26,7 +24,7 @@ public class Doctor extends Users {
 
         //Coleccion de onjetos en un ArrayList para crear las citas
         // ArrayList <va añadir todos_las_variables_de_la_clase> nameVariable = new Arraylist<>()
-        ArrayList<AvailableAppointment> availableAppointments = new ArrayList<>();
+
 
          //metodo de la CLASE ANIDADA para agregar los elementos del ArrayList
         public void addAvailableAppointment(String date, String time){
@@ -59,7 +57,7 @@ public class Doctor extends Users {
             private int id_avaiableAppointment; //citas disponibles
             private Date date;
             private String time;
-            SimpleDateFormat format = new SimpleDateFormat("DD/MM/AAAA");
+            SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
 
             //metodo constructor
             public AvailableAppointment(String date, String time) {
@@ -71,12 +69,12 @@ public class Doctor extends Users {
                 this.time = time;
             }
 
-            public Date getDate() {
+            public Date getDate(String DATE) {
                 return date;
             }
 
-            public String date(String DATE) {
-                return format.format(DATE);
+            public String getDate() {
+                return format.format(date);
             }
 
         public void setDate(Date date) {

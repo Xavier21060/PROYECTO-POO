@@ -13,7 +13,7 @@ public class UIDoctorMenu {
         int response = 0;
         do {
             System.out.println("Doctor");
-            System.out.println("Welcome" + UIMenu.doctorLogged.getName());
+            System.out.println("Welcome " + UIMenu.doctorLogged.getName());
             System.out.println("1. Add Available Appointment");
             System.out.println("2. My scheduled appointments");
             System.out.println("0. Loggout");
@@ -26,6 +26,7 @@ public class UIDoctorMenu {
                     showAddAvailableAppointments();
                     break;
                 case 2:
+
                     break;
                 case 0:
                     UIMenu.showMenu();
